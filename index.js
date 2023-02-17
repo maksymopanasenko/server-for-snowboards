@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 80;
 
 
-const data = {
+const data = `{
     "snowboards": [
       {
         "img": "img/snowboards/board_1.png",
@@ -79,7 +79,7 @@ const data = {
         "id": 6
       }
     ]
-  }
+  }`;
 
 app.get('/', (req, res) => {
     res.end(data);
