@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 80;
+const port = 5000;
 
 
-const data = `{
-    "snowboards": [
+const data = `[
       {
         "img": "img/snowboards/board_1.png",
         "alt": "snowboard_1",
@@ -54,38 +53,13 @@ const data = `{
         "price": 137,
         "available": true
       }
-    ],
-    "requests": [
-      {
-        "id": 1
-      },
-      {
-        "id": 2
-      },
-      {
-        "e-mail": "m.opanasenko1997@gmail.com",
-        "id": 3
-      },
-      {
-        "e-mail": "m.opanasenko1997@gmail.com",
-        "id": 4
-      },
-      {
-        "e-mail": "m.opanasenko1997@gmail.com",
-        "id": 5
-      },
-      {
-        "e-mail": "",
-        "id": 6
-      }
-    ]
-  }`;
+    ]`;
 
 app.get('/', (req, res) => {
     res.end(data);
 })
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || port, () => {
     console.log('Server has been started');
 });
