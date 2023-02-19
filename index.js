@@ -56,6 +56,12 @@ const data = `[
     ]`;
 
 app.get('/', (req, res) => {
+    res.set({
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'POST, GET, DELETE, OPTIONS, key',
+        'Access-Control-Allow-Methods': 'POST, GET, DELETE, OPTIONS',
+    });
     res.end(data);
 })
 
